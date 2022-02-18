@@ -3,8 +3,7 @@ const chromium = require("chrome-aws-lambda");
 
 function isFullUrl(url) {
   try {
-    new URL("https%3A%2F%2Frailwaypgsql.onrender.com%2Flogin/small/9:16/bigger/");
-    console.log('Url');
+    new URL(url);
     return true;
   } catch (e) {
     // invalid url OR local path
@@ -163,7 +162,7 @@ async function handler(event, context) {
     }
   }
 
-  url = decodeURIComponent(url);
+  url = decodeURIComponent("https://railwaypgsql.onrender.com/register/small/9:16/bigger/");
 
   try {
     if (!isFullUrl(url)) {
