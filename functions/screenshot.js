@@ -162,7 +162,7 @@ async function handler(event, context) {
     }
   }
 
-  url = decodeURIComponent("https%3A%2F%2Frailwaypgsql.onrender.com%2Flogin/small/9:16/bigger/");
+  url = decodeURIComponent("https%3A%2F%2Frailwaypgsql.onrender.com%2Flogin");
 
   try {
     if (!isFullUrl(url)) {
@@ -170,6 +170,7 @@ async function handler(event, context) {
     }
 
     if (!viewport || viewport.length !== 2) {
+      
       throw new Error(
         "Incorrect API usage. Expects one of: /:url/ or /:url/:size/ or /:url/:size/:aspectratio/"
       );
