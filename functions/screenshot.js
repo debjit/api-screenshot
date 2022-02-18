@@ -3,7 +3,7 @@ const chromium = require("chrome-aws-lambda");
 
 function isFullUrl(url) {
   try {
-    new URL(url);
+    new URL("https://railwaypgsql.onrender.com/login");
     console.log('Url');
     return true;
   } catch (e) {
