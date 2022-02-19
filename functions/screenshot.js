@@ -161,8 +161,8 @@ async function handler(event, context) {
       viewport = [1200, 630];
     }
   }
-
-  url = decodeURIComponent("https%3A%2F%2Frailwaypgsql.onrender.com%2Fstatus");
+  const rand = Math.random().toString().substr(2, 8);
+  url = decodeURIComponent("https%3A%2F%2Frailwaypgsql.onrender.com%2Fstatus%2test2s" + rand);
 
   try {
     if (!isFullUrl(url)) {
