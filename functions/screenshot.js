@@ -162,7 +162,9 @@ async function handler(event, context) {
     }
   }
   const rand = Math.random().toString().substr(2, 8);
-  url = decodeURIComponent("https%3A%2F%2Frailwaypgsql.onrender.com%2Fstatus%2test2s" + rand);
+  let uriTemp = "https%3A%2F%2Frailwaypgsql.onrender.com%2Fstatus%2test2s" + rand;
+  console.log(uriTemp);
+  url = decodeURIComponent(uriTemp);
 
   try {
     if (!isFullUrl(url)) {
