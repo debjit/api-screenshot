@@ -83,6 +83,8 @@ async function handler(event, context) {
   const API_PARAMS = event.queryStringParameters;
   const params = querystring.parse(event.body);
   const name = params.name || "World";
+  const {query} = JSON.parse(event.body)
+  console.log(query);
   
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/small/1:1/smaller/
   let pathSplit = event.path.split("/").filter((entry) => !!entry);
