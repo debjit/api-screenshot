@@ -14,7 +14,7 @@ function isFullUrl(url) {
 }
 
 async function screenshot(
-  siteUrl,
+  url,
   { format, viewport, dpr = 1, withJs = true, wait }
 ) {
   const browser = await chromium.puppeteer.launch({
@@ -33,10 +33,9 @@ async function screenshot(
   if (!withJs) {
     page.setJavaScriptEnabled(false);
   }
-  let url = decodeURIComponent(siteUrl);
 
   let response = await Promise.race([
-    page.goto(url, {
+    page.goto(decodeURIComponent(url), {
       waitUntil: wait || ["load"],
       timeout: 8500,
     }),
