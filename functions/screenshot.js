@@ -174,7 +174,7 @@ async function handler(event, context) {
   // let uriTemp = "https://railwaypgsql.onrender.com/status/"+ rand;
   let uriTemp = "https://wp-to-next.netlify.app/blog/wpblog/tempore-maxime-molestiae-qui-sapiente-perferendis";
 
-  console.log(uriTemp,encodeURIComponent(uritemp));
+  console.log(uriTemp,encodeURIComponent(uriTemp));
   url = decodeURIComponent(uriTemp);
 
   try {
