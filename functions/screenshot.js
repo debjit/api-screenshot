@@ -119,7 +119,7 @@ async function handler(event, context) {
   // Set Defaults
   format = format || "jpeg";
   aspectratio = aspectratio || "1:1";
-  size = size || "small";
+  size = size || "large";
   zoom = zoom || "standard";
 
   let dpr;
@@ -163,7 +163,8 @@ async function handler(event, context) {
   }
   const rand = Math.random().toString().substr(2, 8);
   // let uriTemp = "https%3A%2F%2Frailwaypgsql.onrender.com%2Fstatus/" + rand;
-  let uriTemp = "https://railwaypgsql.onrender.com/status/"+ rand;
+  // let uriTemp = "https://railwaypgsql.onrender.com/status/"+ rand;
+  let uriTemp = "https://wp-to-next.netlify.app/status/";
   console.log(uriTemp);
   url = decodeURIComponent(uriTemp);
 
