@@ -193,7 +193,7 @@ async function handler(event, context) {
       );
     }
 
-    let output = await screenshot(decodeURIComponent(url), {
+    let output = await screenshot(url, {
       format,
       viewport,
       dpr,
