@@ -1,6 +1,6 @@
 const { builder } = require("@netlify/functions");
 const chromium = require("chrome-aws-lambda");
-// const querystring = require("querystring");
+const querystring = require("querystring");
 
 function isFullUrl(url) {
   try {
