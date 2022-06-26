@@ -79,6 +79,9 @@ async function screenshot(
 
 // Based on https://github.com/DavidWells/netlify-functions-workshop/blob/master/lessons-code-complete/use-cases/13-returning-dynamic-images/functions/return-image.js
 async function handler(event, context) {
+  const API_PARAMS = qs.stringify(event.queryStringParameters);
+  console.log('params are...', API_PARAMS);
+
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/small/1:1/smaller/
   let pathSplit = event.path.split("/").filter((entry) => !!entry);
   let [url, size, aspectratio, zoom, cachebuster] = pathSplit;
@@ -164,7 +167,8 @@ async function handler(event, context) {
   const rand = Math.random().toString().substr(2, 8);
   // let uriTemp = "https%3A%2F%2Frailwaypgsql.onrender.com%2Fstatus/" + rand;
   // let uriTemp = "https://railwaypgsql.onrender.com/status/"+ rand;
-  let uriTemp = "https://wp-to-next.netlify.app/status/";
+  let uriTemp = "blog/wpblog/tempore-maxime-molestiae-qui-sapiente-perferendis";
+
   console.log(uriTemp);
   url = decodeURIComponent(uriTemp);
 
