@@ -80,10 +80,10 @@ async function screenshot(
 
 // Based on https://github.com/DavidWells/netlify-functions-workshop/blob/master/lessons-code-complete/use-cases/13-returning-dynamic-images/functions/return-image.js
 async function handler(event, context) {
-  const API_PARAMS = event.queryStringParameters;
+  const API_PARAMS = event.querystring(event);
   const params = querystring.parse(event.body);
   const name = params.name || "World";
-  console.log('event Path:',event.path,'Event body:',event.body,'params Name:' ,params.name, 'params are...', API_PARAMS);
+  console.log('event Path:', event.path, 'Event body:', event.body, 'params Name:', params.name, 'params are...', API_PARAMS);
 
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/small/1:1/smaller/
   let pathSplit = event.path.split("/").filter((entry) => !!entry);
