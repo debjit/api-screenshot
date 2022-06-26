@@ -87,6 +87,15 @@ async function handler(event, context) {
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/small/1:1/smaller/
   let pathSplit = event.path.split("/").filter((entry) => !!entry);
   let [url, size, aspectratio, zoom, cachebuster] = pathSplit;
+  let uriTemp = "https://wp-to-next.netlify.app/blog/wpblog/tempore-maxime-molestiae-qui-sapiente-perferendis";
+
+  console.log(uriTemp,encodeURIComponent(uriTemp));
+
+  if (!url) {
+      = decodeURIComponent(uriTemp);
+  }
+
+
   let format = "jpeg"; // hardcoded for now
   let viewport = [];
   
@@ -169,16 +178,7 @@ async function handler(event, context) {
       viewport = [1200, 630];
     }
   }
-  const rand = Math.random().toString().substr(2, 8);
-  // let uriTemp = "https%3A%2F%2Frailwaypgsql.onrender.com%2Fstatus/" + rand;
-  // let uriTemp = "https://railwaypgsql.onrender.com/status/"+ rand;
-  let uriTemp = "https://wp-to-next.netlify.app/blog/wpblog/tempore-maxime-molestiae-qui-sapiente-perferendis";
 
-  console.log(uriTemp,encodeURIComponent(uriTemp));
-  
-  if (!url) {
-    url = decodeURIComponent(uriTemp);
-  }
 
   try {
     if (!isFullUrl(url)) {
@@ -192,7 +192,7 @@ async function handler(event, context) {
       );
     }
 
-    let output = await screenshot(url, {
+    let output = await screenshot(decodeURIComponent(url), {
       format,
       viewport,
       dpr,
