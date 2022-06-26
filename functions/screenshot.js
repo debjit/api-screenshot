@@ -175,7 +175,7 @@ async function handler(event, context) {
   let uriTemp = "https://wp-to-next.netlify.app/blog/wpblog/tempore-maxime-molestiae-qui-sapiente-perferendis";
 
   console.log(uriTemp,encodeURIComponent(uriTemp));
-  if (url.length ===0) {
+  if (url.length === 0) {
     url = decodeURIComponent(uriTemp);
   }
 
