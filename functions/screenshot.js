@@ -80,7 +80,7 @@ async function screenshot(
 // Based on https://github.com/DavidWells/netlify-functions-workshop/blob/master/lessons-code-complete/use-cases/13-returning-dynamic-images/functions/return-image.js
 async function handler(event, context) {
   const API_PARAMS = event.queryStringParameters;
-  console.log('params are...', API_PARAMS);
+  console.log(event, 'params are...', API_PARAMS);
 
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/small/1:1/smaller/
   let pathSplit = event.path.split("/").filter((entry) => !!entry);
@@ -122,7 +122,7 @@ async function handler(event, context) {
   // Set Defaults
   format = format || "jpeg";
   aspectratio = aspectratio || "1:1";
-  size = size || "large";
+  size = size || "opengraph";
   zoom = zoom || "standard";
 
   let dpr;
