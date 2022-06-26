@@ -83,13 +83,13 @@ async function handler(event, context) {
   const API_PARAMS = event.queryStringParameters;
   const params = querystring.parse(event.body);
   const name = params.name || "World";
-  const {query} = JSON.parse(event.body)
-  console.log(query);
+  // const {query} = JSON.parse(event.body)
+  // console.log(query);
   
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/small/1:1/smaller/
   let pathSplit = event.path.split("/").filter((entry) => !!entry);
   let [url, size, aspectratio, zoom, cachebuster] = pathSplit;
-  // return-image?fileURL={IMAGE URL HERE}
+
   // let uriTemp = "https://wp-to-next.netlify.app/blog/wpblog/tempore-maxime-molestiae-qui-sapiente-perferendis";
 
   // console.log(uriTemp,encodeURIComponent(uriTemp));
@@ -103,7 +103,7 @@ async function handler(event, context) {
   let viewport = [];
   
   // console.log('Path:',event.path,'Event:',event.body,'Name:' ,params.name, 'params are...', API_PARAMS);
-  console.log(event.path.split("/"),);
+  console.log(event.path.split("/").filter((entry) => !!entry));
 
   // Manage your own frequency by using a _ prefix and then a hash buster string after your URL
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/_20210802/ and set this to today’s date when you deploy
