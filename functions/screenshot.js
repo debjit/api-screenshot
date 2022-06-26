@@ -88,7 +88,7 @@ async function handler(event, context) {
   
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/small/1:1/smaller/
   let pathSplit = event.path.split("/").filter((entry) => !!entry);
-  let [url, size, aspectratio, zoom, cachebuster] = pathSplit;
+  let [tempUrl, size, aspectratio, zoom, cachebuster] = pathSplit;
 
   // let uriTemp = "https://wp-to-next.netlify.app/blog/wpblog/tempore-maxime-molestiae-qui-sapiente-perferendis";
 
@@ -97,7 +97,7 @@ async function handler(event, context) {
   // if (!url) {
   //     = decodeURIComponent(uriTemp);
   // }
-
+let url = decodeURIComponent(url);
 
   let format = "jpeg"; // hardcoded for now
   let viewport = [];
