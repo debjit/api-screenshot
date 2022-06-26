@@ -79,7 +79,7 @@ async function screenshot(
 
 // Based on https://github.com/DavidWells/netlify-functions-workshop/blob/master/lessons-code-complete/use-cases/13-returning-dynamic-images/functions/return-image.js
 async function handler(event, context) {
-  const API_PARAMS = qs.stringify(event.queryStringParameters);
+  const API_PARAMS = event.queryStringParameters;
   console.log('params are...', API_PARAMS);
 
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/small/1:1/smaller/
