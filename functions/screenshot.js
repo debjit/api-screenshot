@@ -1,5 +1,6 @@
 const { builder } = require("@netlify/functions");
 const chromium = require("chrome-aws-lambda");
+const querystring = require("querystring");
 
 function isFullUrl(url) {
   try {
@@ -80,7 +81,9 @@ async function screenshot(
 // Based on https://github.com/DavidWells/netlify-functions-workshop/blob/master/lessons-code-complete/use-cases/13-returning-dynamic-images/functions/return-image.js
 async function handler(event, context) {
   const API_PARAMS = event.queryStringParameters;
-  console.log(event.path, 'params are...', API_PARAMS);
+  const params = querystring.parse(event.body);
+  const name = params.name || "World";
+  console.log(event.path,params.name, 'params are...', API_PARAMS);
 
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/small/1:1/smaller/
   let pathSplit = event.path.split("/").filter((entry) => !!entry);
