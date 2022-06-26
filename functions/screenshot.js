@@ -1,6 +1,6 @@
 const { builder } = require("@netlify/functions");
 const chromium = require("chrome-aws-lambda");
-const querystring = require("querystring");
+// const querystring = require("querystring");
 
 function isFullUrl(url) {
   try {
@@ -91,7 +91,7 @@ async function handler(event, context) {
   let viewport = [];
   
   // console.log('Path:',event.path,'Event:',event.body,'Name:' ,params.name, 'params are...', API_PARAMS);
-  console.log(event.path.split("/"));
+  console.log(event.path.split("/"),);
 
   // Manage your own frequency by using a _ prefix and then a hash buster string after your URL
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/_20210802/ and set this to today’s date when you deploy
@@ -174,7 +174,7 @@ async function handler(event, context) {
   // let uriTemp = "https://railwaypgsql.onrender.com/status/"+ rand;
   let uriTemp = "https://wp-to-next.netlify.app/blog/wpblog/tempore-maxime-molestiae-qui-sapiente-perferendis";
 
-  console.log(uriTemp);
+  console.log(uriTemp,encodeURIComponent(uritemp));
   url = decodeURIComponent(uriTemp);
 
   try {
