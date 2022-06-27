@@ -141,7 +141,8 @@ let url = decodeURIComponent(tempUrl);
   // Set Defaults
   format = format || "jpeg";
   aspectratio = aspectratio || "1:1";
-  size = size || "opengraph";
+  size = size || "";
+  // size = size || "large";
   zoom = zoom || "standard";
 
   let dpr;
