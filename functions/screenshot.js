@@ -199,13 +199,12 @@ let url = decodeURIComponent(tempUrl);
       );
     }
 
-    // let output = await screenshot(url, {
-    //   format,
-    //   viewport,
-    //   dpr,
-    //   wait,
-    // });
-    let output = await screenshot(url,'jpeg');
+    let output = await screenshot(url, {
+      format,
+      viewport,
+      dpr,
+      wait,
+    });
 
     // output to Function logs
     console.log(decodeURIComponent(url), format, { viewport }, { size }, { dpr }, { aspectratio });
