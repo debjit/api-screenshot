@@ -58,7 +58,7 @@ async function screenshot(
   let options = {
     type: format,
     encoding: "base64",
-    fullPage: true,
+    fullPage: false,
     captureBeyondViewport: false,
     clip: {
       x: 0,
