@@ -17,6 +17,7 @@ async function screenshot(
   url,
   { format, viewport, dpr = 1, withJs = true, wait }
 ) {
+  console.log(url);
   const browser = await chromium.puppeteer.launch({
     executablePath: await chromium.executablePath,
     args: chromium.args,
@@ -97,14 +98,14 @@ async function handler(event, context) {
   // if (!url) {
   //     = decodeURIComponent(uriTemp);
   // }
-let url = decodeURIComponent(url);
+let url = decodeURIComponent(tempUrl);
 
   let format = "jpeg"; // hardcoded for now
   let viewport = [];
   
   // console.log('Path:',event.path,'Event:',event.body,'Name:' ,params.name, 'params are...', API_PARAMS);
   // console.log(event.path.split("/").filter((entry) => !!entry));
-  console.log(url,decodeURIComponent(url));
+  console.log(url,decodeURIComponent(url),tempUrl);
 
   // Manage your own frequency by using a _ prefix and then a hash buster string after your URL
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/_20210802/ and set this to today’s date when you deploy
