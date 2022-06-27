@@ -105,7 +105,7 @@ let url = decodeURIComponent(tempUrl);
   
   // console.log('Path:',event.path,'Event:',event.body,'Name:' ,params.name, 'params are...', API_PARAMS);
   // console.log(event.path.split("/").filter((entry) => !!entry));
-  console.log(url,decodeURIComponent(url),tempUrl);
+  // console.log(url,decodeURIComponent(url),tempUrl);
 
   // Manage your own frequency by using a _ prefix and then a hash buster string after your URL
   // e.g. /https%3A%2F%2Fwww.11ty.dev%2F/_20210802/ and set this to today’s date when you deploy
