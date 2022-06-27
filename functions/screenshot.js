@@ -21,10 +21,10 @@ async function screenshot(
   const browser = await chromium.puppeteer.launch({
     executablePath: await chromium.executablePath,
     args: chromium.args,
-    // defaultViewport: {
-    //   width: viewport[0],
-    //   height: viewport[1],
-    //   deviceScaleFactor: parseFloat(dpr),
+    defaultViewport: {
+      width: viewport[0],
+      height: viewport[1],
+      deviceScaleFactor: parseFloat(dpr),
     },
     headless: chromium.headless,
   });
@@ -59,13 +59,13 @@ async function screenshot(
     type: format,
     encoding: "base64",
     fullPage: true,
-    captureBeyondViewport: true,
-    // clip: {
-    //   x: 0,
-    //   y: 0,
-    //   width: viewport[0],
-    //   height: viewport[1],
-    // },
+    captureBeyondViewport: false,
+    clip: {
+      x: 0,
+      y: 0,
+      width: viewport[0],
+      height: viewport[1],
+    },
   };
 
   if (format === "jpeg") {
