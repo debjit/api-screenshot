@@ -17,7 +17,7 @@ async function screenshot(
   url,
   { format, viewport, dpr = 1, withJs = true, wait }
 ) {
-  console.log(url);
+  // console.log(url);
   const browser = await chromium.puppeteer.launch({
     executablePath: await chromium.executablePath,
     args: chromium.args,
