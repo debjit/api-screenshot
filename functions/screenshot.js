@@ -191,6 +191,7 @@ let url = decodeURIComponent(tempUrl);
       throw new Error(`Invalid \`url\`: ${url}`);
     }
 
+    // Stopping viewpoint and  making custom viewpoint
     if (!viewport || viewport.length !== 2) {
 
       throw new Error(
@@ -198,12 +199,13 @@ let url = decodeURIComponent(tempUrl);
       );
     }
 
-    let output = await screenshot(url, {
-      format,
-      viewport,
-      dpr,
-      wait,
-    });
+    // let output = await screenshot(url, {
+    //   format,
+    //   viewport,
+    //   dpr,
+    //   wait,
+    // });
+    let output = await screenshot(url);
 
     // output to Function logs
     console.log(decodeURIComponent(url), format, { viewport }, { size }, { dpr }, { aspectratio });
